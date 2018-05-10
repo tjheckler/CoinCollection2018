@@ -139,13 +139,19 @@ public class CoinCollection
     public BigDecimal getFaceValue()
     {
         BigDecimal totalValue = new BigDecimal("0.00");
-        totalValue = totalValue.add(getPenniesFaceValue().add(getDimesFaceValue().add(getNickelsFaceValue().add(getQuartersFaceValue()))));
+        totalValue = totalValue.add(getPenniesFaceValue());
+        totalValue = totalValue.add(getNickelsFaceValue());
+        totalValue = totalValue.add(getDimesFaceValue());
+        totalValue = totalValue.add(getQuartersFaceValue());
         return totalValue;
     }
     public BigDecimal getCollectibleValue()
     {
         BigDecimal totalValue = new BigDecimal("0.00");
-        totalValue = totalValue.add(getPenniesCollectibleValue().add(getDimesCollectibleValue().add(getNickelsCollectibleValue().add(getQuartersCollectibleValue()))));
+        totalValue = totalValue.add(getPenniesCollectibleValue());
+        totalValue = totalValue.add(getNickelsCollectibleValue());
+        totalValue = totalValue.add(getDimesCollectibleValue());
+        totalValue = totalValue.add(getQuartersCollectibleValue());
         return totalValue;
     }
 }
