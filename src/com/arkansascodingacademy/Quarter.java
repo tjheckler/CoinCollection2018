@@ -2,7 +2,7 @@ package com.arkansascodingacademy;
 
 import java.math.BigDecimal;
 
-public class Quarter
+public class Quarter implements ICurrency
 {
     private int year;
    public Quarter(int year)
@@ -14,6 +14,9 @@ public class Quarter
         BigDecimal quarter = new BigDecimal("0.25");
         return quarter;
     }
+
+
+
     public BigDecimal getCollectibleValue()
     {
         BigDecimal faceValue = getFaceValue();
@@ -30,5 +33,9 @@ public class Quarter
 
 
         return totalCollectorValue;
+    }
+    public String getName()
+    {
+        return this.getName();
     }
 }

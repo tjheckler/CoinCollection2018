@@ -2,6 +2,7 @@ package com.arkansascodingacademy;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class CoinCollection
@@ -63,78 +64,41 @@ public class CoinCollection
 
     public BigDecimal getPenniesFaceValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Penny penny : pennys)
-        {
-            totalValue = totalValue.add(penny.getFaceValue());
-        }
-        return totalValue;
+       return getPenniesFaceValue();
     }
 
     public BigDecimal getDimesFaceValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Dime dime : dimes)
-        {
-            totalValue = totalValue.add(dime.getFaceValue());
-        }
-        return totalValue;
+
+        return getDimesFaceValue();
     }
 
     public BigDecimal getNickelsFaceValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Nickel nickel : nickels)
-        {
-            totalValue = totalValue.add(nickel.getFaceValue());
-        }
-        return totalValue;
+
+        return getNickelsFaceValue();
     }
 
     public BigDecimal getQuartersFaceValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Quarter quarter : quarters)
-        {
-            totalValue = totalValue.add(quarter.getFaceValue());
-        }
-        return totalValue;
+
+        return getQuartersFaceValue();
     }
     public BigDecimal getQuartersCollectibleValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Quarter quarter : quarters)
-        {
-            totalValue = totalValue.add(quarter.getCollectibleValue());
-        }
-        return totalValue;
+       return getQuartersCollectibleValue();
     }
     public BigDecimal getNickelsCollectibleValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Nickel nickel : nickels)
-        {
-            totalValue = totalValue.add(nickel.getCollectibleValue());
-        }
-        return totalValue;
+       return getNickelsCollectibleValue();
     }
     public BigDecimal getDimesCollectibleValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Dime dime: dimes)
-        {
-            totalValue = totalValue.add(dime.getCollectibleValue());
-        }
-        return totalValue;
+        return getDimesCollectibleValue();
     }
     public BigDecimal getPenniesCollectibleValue()
     {
-        BigDecimal totalValue = new BigDecimal("0.00");
-        for (Penny penny: pennys)
-        {
-            totalValue = totalValue.add(penny.getCollectibleValue());
-        }
-        return totalValue;
+       return getPenniesCollectibleValue();
     }
     public BigDecimal getFaceValue()
     {
@@ -153,6 +117,26 @@ public class CoinCollection
         totalValue = totalValue.add(getDimesCollectibleValue());
         totalValue = totalValue.add(getQuartersCollectibleValue());
         return totalValue;
+    }
+    public BigDecimal getCollectibleValue(Collection<? extends ICurrency> currencies)
+    {
+        BigDecimal totalValue = new BigDecimal("0.00");
+        for (ICurrency currency : currencies)
+        {
+
+            totalValue = totalValue.add(currency.getFaceValue());
+        }
+        return totalValue;
+    }
+    private BigDecimal getFaceValue(Collection<? extends ICurrency> currencies)
+    {
+        BigDecimal total = new BigDecimal("0.00");
+        for (ICurrency currency : currencies)
+        {
+
+            total = total.add(currency.getFaceValue());
+        }
+        return total;
     }
 }
 

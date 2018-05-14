@@ -2,7 +2,7 @@ package com.arkansascodingacademy;
 
 import java.math.BigDecimal;
 
-public class Dime
+public class Dime implements ICurrency
 {
     private int year;
     public Dime(int year)
@@ -14,6 +14,9 @@ public class Dime
        BigDecimal dime = new BigDecimal("0.10");
        return dime;
     }
+
+
+
     public BigDecimal getCollectibleValue()
     {
         BigDecimal faceValue = getFaceValue();
@@ -26,5 +29,9 @@ public class Dime
 
 
         return totalCollectorValue;
+    }
+    public String getName()
+    {
+        return this.getName();
     }
 }
