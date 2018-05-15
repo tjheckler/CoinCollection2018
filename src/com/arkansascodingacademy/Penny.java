@@ -6,14 +6,14 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-public class Penny implements ICurrency
+public class Penny extends Coin implements ICurrency
 {
     private static final BigDecimal Face_Value = new BigDecimal("0.01");
-    private int year;
+
 
     public Penny(int year)
     {
-        this.year = year;
+        super(year);
     }
 
      public BigDecimal getFaceValue()
@@ -30,9 +30,9 @@ public class Penny implements ICurrency
         BigDecimal collectorPenny = new BigDecimal("0.03");
 
         BigDecimal collectorPennyValue = new BigDecimal("0.0");
-        if (year < 1945)
+        if (getYear() < 1945)
         {
-            BigDecimal yearsOld = new BigDecimal(1945 - year);
+            BigDecimal yearsOld = new BigDecimal(1945 - getYear());
             collectorPennyValue = yearsOld.multiply(collectorPenny);
         }
         BigDecimal totalCollectorValue = faceValue.add(collectorPennyValue);

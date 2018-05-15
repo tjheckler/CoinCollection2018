@@ -64,41 +64,41 @@ public class CoinCollection
 
     public BigDecimal getPenniesFaceValue()
     {
-       return getPenniesFaceValue();
+       return getFaceValue(pennys);
     }
 
     public BigDecimal getDimesFaceValue()
     {
 
-        return getDimesFaceValue();
+        return getFaceValue(dimes);
     }
 
     public BigDecimal getNickelsFaceValue()
     {
 
-        return getNickelsFaceValue();
+        return getFaceValue(nickels);
     }
 
     public BigDecimal getQuartersFaceValue()
     {
 
-        return getQuartersFaceValue();
+        return getFaceValue(quarters);
     }
     public BigDecimal getQuartersCollectibleValue()
     {
-       return getQuartersCollectibleValue();
+       return getCollectibleValue(quarters);
     }
     public BigDecimal getNickelsCollectibleValue()
     {
-       return getNickelsCollectibleValue();
+       return getCollectibleValue(nickels);
     }
     public BigDecimal getDimesCollectibleValue()
     {
-        return getDimesCollectibleValue();
+        return getCollectibleValue(dimes);
     }
     public BigDecimal getPenniesCollectibleValue()
     {
-       return getPenniesCollectibleValue();
+       return getCollectibleValue(pennys);
     }
     public BigDecimal getFaceValue()
     {

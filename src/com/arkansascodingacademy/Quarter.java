@@ -2,12 +2,12 @@ package com.arkansascodingacademy;
 
 import java.math.BigDecimal;
 
-public class Quarter implements ICurrency
+public class Quarter extends Coin implements ICurrency
 {
-    private int year;
+
    public Quarter(int year)
     {
-        this.year = year;
+        super(year);
     }
     public BigDecimal getFaceValue()
     {
@@ -24,9 +24,9 @@ public class Quarter implements ICurrency
         BigDecimal collectorQuarter = new BigDecimal("0.22");
 
         BigDecimal collectorQuarterValue = new BigDecimal("0.0");
-        if (year < 1923)
+        if (getYear() < 1923)
         {
-            BigDecimal yearsOld = new BigDecimal(1923 - year);
+            BigDecimal yearsOld = new BigDecimal(1923 - getYear());
             collectorQuarterValue = yearsOld.multiply(collectorQuarter);
         }
         BigDecimal totalCollectorValue = faceValue.add(collectorQuarterValue);
